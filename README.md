@@ -70,4 +70,23 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 |R2	| R-Squared|
 |EXRET	| Excess Return from Risk Model|
 
+<br>
+
+## Data Cleaning 
+
+```python
+# Convert Percentage string to float in dataframe
+
+list1 = ["ivol","tvol","R2","exret","RET"]
+
+for item in list1: 
+    df[item] = df[item].str.rstrip('%').astype('float')/ 100.0
+
+# Replace all zeros in dataframe with NaN
+df = df.replace(0, np.nan)
+
+# Drop all rows which contains 'NAN' in the dependent variable 'RET'
+df = df.dropna(subset = ['RET'])
+
+```
 
