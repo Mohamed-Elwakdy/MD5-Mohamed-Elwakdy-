@@ -91,6 +91,7 @@ df = df.dropna(subset = ['RET'])
 ```
 
 <p align="center">
+  <img width="850" height="250" src="https://user-images.githubusercontent.com/61699200/124521776-c09d6f80-ddbe-11eb-8006-fb22059be3ff.jpg">
   ![Data Cleaning 1](https://user-images.githubusercontent.com/61699200/124521776-c09d6f80-ddbe-11eb-8006-fb22059be3ff.jpg)
 </p>
 
