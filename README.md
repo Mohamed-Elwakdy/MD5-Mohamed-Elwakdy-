@@ -37,3 +37,15 @@ from matplotlib import pyplot
 
 ```
 <br>
+## Read Data file
+
+#### The head () function is used to get the first n rows.
+
+```python
+df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ') 
+```
+![Image of screencapture](images/Images - Lehner Investments - Assessment/head.jpg)
+
+
+
+<br>
