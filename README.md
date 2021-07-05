@@ -61,22 +61,14 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 |    Field Name        |        Description                |
 |:-: | :-: |
 |PERMNO | Unique stock (share class) level identifier|
-|license |varchar(32)|
-|vendor_id|text|
-|rate_code |int(3)|
-|store_and_fwd_flag |varchar(1)|
-|pickup_datetime |datetime|
-|dropoff_datetime |datetime|
-|passenger_count |int(3)|
-|trip_time_in_secs|int(18)|
-|trip_distance|decimal (5.3)|
-|pickup_longitude|decimal (9.7)|
-|pickup_latitude  |decimal (9.7)|
-|dropoff_longitude |decimal (9.7)|
-|dropoff_latitude |decimal (9.7)|
-
-<br>
-
-
+|Date | Weekly basis |
+|n | Number of shares (stocks)|
+|RET | Returns that the investors generate out of the stock market|
+|B_MKT	|Beta on MKT (levered market beta)|
+|ALPHA | The excess return on an investment after adjusting for market-related volatility and random fluctuations|
+|IVOL	| Idiosyncratic Volatility (effective inflation and market hedge)|
+|TVOL	 | Total Volatility (trading volume, which refers to the number of share s traded in the stock)|
+|R2	| R-Squared|
+|EXRET	| Excess Return from Risk Model|
 
 
