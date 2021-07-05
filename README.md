@@ -89,6 +89,9 @@ df = df.replace(0, np.nan)
 df = df.dropna(subset = ['RET'])
 
 ```
+
 <p align="center">
   <img width="850" height="250" src="![Data Cleaning 1](https://user-images.githubusercontent.com/61699200/124521572-fc840500-ddbd-11eb-8823-d4aed560ec6c.png)">
 </p>
+
+<br>
