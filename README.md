@@ -37,6 +37,7 @@ from matplotlib import pyplot
 
 ```
 <br>
+
 ## Read Data file
 
 #### The head () function is used to get the first n rows.
@@ -49,16 +50,8 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
   <img width="900" height="250" src="https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg">
 </p>
 
-
-<div class="picture_div" style="margin:0px auto; text-align:center;">
-     ![head1](https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg)
-</div>
-
-<p align="center">
-  ![head1](https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg)
-</p>
-
 <br>
+
 ## Field names and Description
 
 #### We can show the field names(header) by showing the data of the 1st row (0th index).
