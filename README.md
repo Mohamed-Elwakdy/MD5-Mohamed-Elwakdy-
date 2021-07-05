@@ -96,6 +96,7 @@ df = df.dropna(subset = ['RET'])
 </p>
 
 <br>
+
 #### Extract the day information form 'DATE' independent variable because this feature is an important feature and has an effect on the dependent variable 'RET' and improve the performance of the predictive model. 
 
 ```python
