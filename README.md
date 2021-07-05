@@ -109,7 +109,7 @@ df = df.drop(['DATE'], axis = 1)
 ```
 <br>
 
-#### apply normalization techniques to treate the negative values with changing the location for the 'RET' independent vaiable to be the last column in the dataframe 
+#### Apply normalization techniques to treate the negative values with changing the location for the 'RET' independent vaiable to be the last column in the dataframe 
 ```python
 for column in df.columns:
     df[column] = (df[column] - df[column].min()) / (df[column].max() - df[column].min())
@@ -121,6 +121,33 @@ df = df[['PERMNO','n','b_mkt','alpha','ivol','tvol','R2','exret','Day','RET']]
 <p align="center">
   <img width="800" height="200" src="https://user-images.githubusercontent.com/61699200/124523048-4de2c300-ddc3-11eb-915f-6a2ad007b7b4.jpg">
 </p>
+
+<br>
+
+## check correlation between the variables in the dataset
+
+#### Find the correlecation between the variables 
+
+```python
+feat_cols1 = []
+for col in df1.columns:
+    #print(col)
+    feat_cols1.append (col)
+feat_cols1.pop()
+print (feat_cols1)   
+
+length_mat = len(feat_cols1)
+corr_ = df1[feat_cols1].corr()
+print (corr_)
+
+corr_thres = 0.8
+
+for row in list(range(length_mat)):
+    for col in list(range(row)):
+        corr_val = corr_.iloc[row,col]
+        if corr_val > corr_thres:
+            print(corr_.index[row],'is correlated with:',corr_.index[col],'with correlation value of',corr_val)
+```
 
 <br>
 
