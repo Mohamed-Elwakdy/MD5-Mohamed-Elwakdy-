@@ -57,7 +57,7 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 #### We can show the field names(header) by showing the data of the 1st row (0th index).
 
 <p align="center">
-|Field Name  | Description |
+|                 Field Name              |        Description                |
 |:-: | :-: |
 |PERMNO | Unique stock (share class) level identifier|
 |license |varchar(32)|
