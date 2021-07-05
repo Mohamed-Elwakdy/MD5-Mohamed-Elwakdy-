@@ -96,3 +96,30 @@ df = df.dropna(subset = ['RET'])
 </p>
 
 <br>
+
+#### Extract the day information form 'DATE' independent variable because this feature is an important feature and has an effect on the dependent variable 'RET' and improve the performance of the predictive model. 
+
+```python
+
+df['DATE'] = pd.to_datetime(df['DATE'], errors='coerce')
+df['Day'] =  df['DATE'].dt.day
+
+# Remove 'DATE' column from dataframe.  
+df = df.drop(['DATE'], axis = 1)
+
+```
+<br>
+
+#### apply normalization techniques to treate the negative values with changing the location for the 'RET' independent vaiable to be the last column in the dataframe 
+
+```python
+
+for column in df.columns:
+    df[column] = (df[column] - df[column].min()) / (df[column].max() - df[column].min())
+
+df = df[['PERMNO','n','b_mkt','alpha','ivol','tvol','R2','exret','Day','RET']]
+
+```
+<br>
+
+
