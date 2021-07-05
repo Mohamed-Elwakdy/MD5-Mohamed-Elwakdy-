@@ -45,6 +45,10 @@ from matplotlib import pyplot
 df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ') 
 ```
 
+<div class="picture_div" style="margin:0px auto; text-align:center;">
+     ![head1](https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg)
+</div>
+
 <p align="center">
   ![head1](https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg)
 </p>
