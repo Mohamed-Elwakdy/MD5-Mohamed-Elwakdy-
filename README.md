@@ -56,22 +56,25 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 
 #### We can show the field names(header) by showing the data of the 1st row (0th index).
 
-    |   ## Field Name  | Description |
-    | ------------- | --------------------- |
-    |PERMNO | Unique stock (share class) level identifier|
-    |license |varchar(32)|
-    |vendor_id|text|
-    |rate_code |int(3)|
-    |store_and_fwd_flag |varchar(1)|
-    |pickup_datetime |datetime|
-    |dropoff_datetime |datetime|
-    |passenger_count |int(3)|
-    |trip_time_in_secs|int(18)|
-    |trip_distance|decimal (5.3)|
-    |pickup_longitude|decimal (9.7)|
-    |pickup_latitude  |decimal (9.7)|
-    |dropoff_longitude |decimal (9.7)|
-    |dropoff_latitude |decimal (9.7)|
+<br>
+
+|   Field Name  | Description |
+| ------------- | --------------------- |
+|PERMNO | Unique stock (share class) level identifier|
+|license |varchar(32)|
+|vendor_id|text|
+|rate_code |int(3)|
+|store_and_fwd_flag |varchar(1)|
+|pickup_datetime |datetime|
+|dropoff_datetime |datetime|
+|passenger_count |int(3)|
+|trip_time_in_secs|int(18)|
+|trip_distance|decimal (5.3)|
+|pickup_longitude|decimal (9.7)|
+|pickup_latitude  |decimal (9.7)|
+|dropoff_longitude |decimal (9.7)|
+|dropoff_latitude |decimal (9.7)|
+
 <br>
 
 
