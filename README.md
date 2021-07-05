@@ -59,7 +59,7 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 <br>
 
        |   Field Name  | Description |
-       | ------------- | --------------------- |
+       |:-: | :-: |
        |PERMNO | Unique stock (share class) level identifier|
        |license |varchar(32)|
        |vendor_id|text|
