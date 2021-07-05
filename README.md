@@ -44,7 +44,10 @@ from matplotlib import pyplot
 ```python
 df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ') 
 ```
-![head1](https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg)
+
+<p align="center">
+  ![head1](https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg)
+</p>
 
 <br>
 ## Field names and Description
