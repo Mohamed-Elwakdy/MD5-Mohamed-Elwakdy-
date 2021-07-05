@@ -44,7 +44,7 @@ from matplotlib import pyplot
 ```python
 df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ') 
 ```
-![Image of screencapture](images/Images - Lehner Investments - Assessment/head.jpg)
+![Image of screencapture](images/head.jpg)
 
 
 
