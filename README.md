@@ -47,7 +47,7 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 ```
 
 <p align="center">
-  <img width="900" height="250" src="https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg">
+  <img width="850" height="250" src="https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg">
 </p>
 
 <br>
@@ -58,22 +58,22 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 
 <br>
 
-       |   Field Name  | Description |
-       |:-: | :-: |
-       |PERMNO | Unique stock (share class) level identifier|
-       |license |varchar(32)|
-       |vendor_id|text|
-       |rate_code |int(3)|
-       |store_and_fwd_flag |varchar(1)|
-       |pickup_datetime |datetime|
-       |dropoff_datetime |datetime|
-       |passenger_count |int(3)|
-       |trip_time_in_secs|int(18)|
-       |trip_distance|decimal (5.3)|
-       |pickup_longitude|decimal (9.7)|
-       |pickup_latitude  |decimal (9.7)|
-       |dropoff_longitude |decimal (9.7)|
-       |dropoff_latitude |decimal (9.7)|
+|   Field Name  | Description |
+|:-: | :-: |
+|PERMNO | Unique stock (share class) level identifier|
+|license |varchar(32)|
+|vendor_id|text|
+|rate_code |int(3)|
+|store_and_fwd_flag |varchar(1)|
+|pickup_datetime |datetime|
+|dropoff_datetime |datetime|
+|passenger_count |int(3)|
+|trip_time_in_secs|int(18)|
+|trip_distance|decimal (5.3)|
+|pickup_longitude|decimal (9.7)|
+|pickup_latitude  |decimal (9.7)|
+|dropoff_longitude |decimal (9.7)|
+|dropoff_latitude |decimal (9.7)|
 
 <br>
 
