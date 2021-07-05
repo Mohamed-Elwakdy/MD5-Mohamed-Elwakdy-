@@ -15,9 +15,11 @@
 
 #### The best perfomance of both models I get using those two predictive models when I increased the number of trees 'n_estimators' and 'max_depth' hyperparameters where I got the highest train_scores and test_scores and lowest mse_train and mse_test.  
  
-<br>python
+<br>
 
 ## Import Packages 
+
+```python
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -33,4 +35,5 @@ from xgboost import plot_tree
 from sklearn.metrics import mean_squared_error
 from matplotlib import pyplot
 
+```
 <br>
