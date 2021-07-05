@@ -46,5 +46,28 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 ```
 ![head1](https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg)
 
+<br>
+## Field names and Description
+
+#### We can show the field names(header) by showing the data of the 1st row (0th index).
+
+|    Field Name  | Data Type |
+| ------------- | --------------------- |
+|medallion | varchar(32)|
+|hack_license |varchar(32)|
+|vendor_id|text|
+|rate_code |int(3)|
+|store_and_fwd_flag |varchar(1)|
+|pickup_datetime |datetime|
+|dropoff_datetime |datetime|
+|passenger_count |int(3)|
+|trip_time_in_secs|int(18)|
+|trip_distance|decimal (5.3)|
+|pickup_longitude|decimal (9.7)|
+|pickup_latitude  |decimal (9.7)|
+|dropoff_longitude |decimal (9.7)|
+|dropoff_latitude |decimal (9.7)|
+
+
 
 
