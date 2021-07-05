@@ -124,9 +124,10 @@ df = df[['PERMNO','n','b_mkt','alpha','ivol','tvol','R2','exret','Day','RET']]
 
 <br>
 
-## check correlation between the variables in the dataset
+## Check the correlation between the variables in the dataset
 
-#### Find the correlecation between the variables 
+#### Tvol (Total Volatility), Ivol (Idiosyncratic Volatility) seems have high predictive power but highly correlated "0.99". 
+#### A lots for the features are not heavily correlated
 
 ```python
 feat_cols1 = []
