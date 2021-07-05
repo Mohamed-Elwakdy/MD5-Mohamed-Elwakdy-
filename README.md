@@ -79,7 +79,7 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
     |pickup_latitude  |decimal (9.7)|
     |dropoff_longitude |decimal (9.7)|
     |dropoff_latitude |decimal (9.7)|
-
+<br>
 
 
 
