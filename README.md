@@ -153,6 +153,6 @@ for row in list(range(length_mat)):
 <br>
 
 <p align="center">
-  <img width="800" height="200" src="https://user-images.githubusercontent.com/61699200/124523828-a8c9e980-ddc6-11eb-9cad-3a334d05a07f.jpg">
+  <img width="800" height="350" src="https://user-images.githubusercontent.com/61699200/124523828-a8c9e980-ddc6-11eb-9cad-3a334d05a07f.jpg">
 </p>
 
