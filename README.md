@@ -92,7 +92,6 @@ df = df.dropna(subset = ['RET'])
 
 <p align="center">
   <img width="800" height="200" src="https://user-images.githubusercontent.com/61699200/124521776-c09d6f80-ddbe-11eb-8006-fb22059be3ff.jpg">
-
 </p>
 
 <br>
@@ -118,5 +117,12 @@ for column in df.columns:
 df = df[['PERMNO','n','b_mkt','alpha','ivol','tvol','R2','exret','Day','RET']]
 ```
 <br>
+
+<p align="center">
+  <img width="800" height="200" src="https://user-images.githubusercontent.com/61699200/124523048-4de2c300-ddc3-11eb-915f-6a2ad007b7b4.jpg">
+</p>
+
+<br>
+
 
 
