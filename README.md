@@ -46,7 +46,7 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 ```
 
 <p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg">
+  <img width="700" height="400" src="https://user-images.githubusercontent.com/61699200/124518680-0ead7580-ddb5-11eb-8532-bed8698e3c32.jpg">
 </p>
 
 
