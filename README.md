@@ -253,6 +253,13 @@ plot_fun(num_trees,mse_train1, mse_test1)
   <img width="610" height="370" src="https://user-images.githubusercontent.com/61699200/124529921-88575a80-ddd9-11eb-8605-6820fba32082.jpg">
 </p>
 
+<MaterialTable
+     icons={
+                { Search, NextPage }
+                }
+     columns={[....]}
+ />
+
 #### Figure 1 XGBOoost Algorithm - Mean Squared Error Against Number of Trees (n_estimators has values from 6 to 20)
 
 
