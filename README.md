@@ -154,5 +154,101 @@ for row in list(range(length_mat)):
 
 <p align="center">
   <img width="730" height="320" src="https://user-images.githubusercontent.com/61699200/124523828-a8c9e980-ddc6-11eb-9cad-3a334d05a07f.jpg">
-</p>
+</p>\
 
+<br>
+
+## Split the dataset into training and test datasets 
+
+
+```python
+
+def Split_Training_Test_fun (df_train_test):
+    
+    train_set = df_train_test.sample(frac=0.80, random_state=0)
+    test_set = df_train_test.drop(train_set.index)
+    train_set_RET = train_set.pop('RET')
+    test_set_RET = test_set.pop('RET')
+    
+    # Convert train_set, test_set,train_set_labels and test_set_labels to float32 
+    train_set = np.nan_to_num(train_set.astype(np.float32))
+    train_set_RET = np.nan_to_num(train_set_RET.astype(np.float32))
+    test_set = np.nan_to_num(test_set.astype(np.float32))
+    test_set_RET = np.nan_to_num(test_set_RET.astype(np.float32))
+    
+    return train_set,test_set,train_set_RET,test_set_RET
+
+train_set,test_set,train_set_RET,test_set_RET = Split_Training_Test_fun (df)
+
+```
+<br>
+
+## XGBoost algorithm
+
+#### Used the XGBoost Algorithm for training and evaluate the model with different numbers of trees (from 6 to 20 trees) with calculating the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test 
+
+```python
+
+model = XGBRegressor(n_estimators = 6)
+
+#def Train_Evaluate_Model_Fun (model,train_set, test_set, train_set_RET, test_set_RET):
+    
+for iter in range(6, 21, 1):
+    
+    num_trees.append(iter)
+    
+    model.fit(train_set, train_set_RET)
+    y_train_predicted = model.predict(train_set)
+    train_score =  model.score(train_set, train_set_RET)
+    train_scores.append(train_score)
+    
+    y_test_predicted = model.predict(test_set)
+    test_score =  model.score(test_set, test_set_RET)
+    test_scores.append(test_score)    
+
+    mse_train = mean_squared_error(train_set_RET, y_train_predicted)
+    mse_train1.append(mse_train)
+    RMSE_Train = np.sqrt(mse_train)
+    RMSE_Train1.append (RMSE_Train)
+    
+    mse_test = mean_squared_error(test_set_RET, y_test_predicted)
+    mse_test1.append(mse_test)
+    RMSE_Test = np.sqrt(mse_test)
+    RMSE_Test1.append (RMSE_Test)
+    #print('>%d, train: %.3f, test: %.3f' % (i, train_score, test_score))
+    #print("Iteration: {} Train mse: {} Test mse: {}".format(iter, mse_train, mse_test))
+    model.n_estimators += 1
+    #return train_scores, test_scores,mse_train1,mse_test1
+    
+    #train_scores, test_scores,mse_train1,mse_test1 = Train_Evaluate_Model_Fun (model,train_set,test_set,train_set_RET,test_set_RET)
+    
+    ```
+  <br>
+  
+  #### Based on the "train_scores" and "test_scores", the performance of the model is improved when the number of trees are increased so the highest "train_scores" and "test_scores" I got "> 99%" when the number of trees > 9. Although the y-axis is so small, meaning the deviations shown in the plot may not be very significant regarding the underfitting and overfitting as rms for training and test set are so small.  I am looking to find out the best hyperparameters values to get the best performance of the model. Based on Figure 1, what I can start to visually see that there is underfitting when the number of trees <=7, but there is no overfitting. 
+
+```python
+
+  def plot_fun (num_trees,mse_train1, mse_test1):
+    
+    pyplot.plot(num_trees, mse_train1, marker='.', label= 'MSE on Train Data')
+    pyplot.plot(num_trees, mse_test1, marker='.', label= 'MSE on Test Data')
+
+    # axis labels
+    pyplot.xlabel('no. of trees')
+    pyplot.ylabel('Mean Squared Error')
+    
+    # show the legend
+    pyplot.legend()
+    
+    # show the plot
+    pyplot.show()
+
+plot_fun(num_trees,mse_train1, mse_test1)
+
+```
+
+
+  
+  
+  
