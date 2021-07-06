@@ -254,7 +254,7 @@ plot_fun(num_trees,mse_train1, mse_test1)
 </p>
 
 <p align="center">
-    // Figure 1 XGBOoost Algorithm - Mean Squared Error Against Number of Trees (n_estimators has values from 6 to 20)
+    Figure 1 XGBOoost Algorithm - Mean Squared Error Against Number of Trees (n_estimators has values from 6 to 20)
 </p>
 
 
