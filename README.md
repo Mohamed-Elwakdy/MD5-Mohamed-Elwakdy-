@@ -308,8 +308,6 @@ plt.show()
 
 ```python
 
-mse_train1, mse_test1,max_depth1, RMSE_Train1, RMSE_Test1, train_scores, test_scores = list(), list(), list(), list(),list(), list(),list()
-
 model = XGBRegressor(learning_rate= 0.04,max_depth= 1,n_estimators= 100,subsample= 0.7)
 
 # Training and Evaluate the model 
@@ -357,6 +355,8 @@ for iter in range(1, 20, 2):
 
 #### Here, I will start to use a random forest instead of XGBoost to see if I will get a better results. Before using Random Forest, I will Remove all observations contain missing values
 
+#### For more information about the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test values, plaese see the Jupyter Notebook 
+
 ```python
 df_data = df.dropna()
 print(df_data)
@@ -368,7 +368,7 @@ train_set_RF,test_set_RF,train_set_pred,test_set_pred = Split_Training_Test_fun 
 
 model = RandomForestRegressor (n_estimators = 6, n_jobs=-1, random_state=0)
 
-#### Training and Evaluate the model using Random Forest with calculating the train_scores, test_scores, 'mse_train' and 'mse_test'
+#### Training and Evaluate the model using Random Forest with calculating the train_scores, test_scores, mse_train, mse_test, RMSE_Train and RMSE_Test
 
 #### Here, I used many hyperparameters which are n_estimators, n_jobs and random_state. Based on the "train_scores" and "test_scores", the performance of the model is good where the accuracy is more than 99%. The deviations shown in the plot may not be very significant as they are so small (1e-6), but based on what I can start to visually see that there is underfitting When the number of trees are < 9 and there is overfitting when the number of trees are between 12 and 18 as in Figure 4. The best performance of the model is when the number of trees are 10, 11, 19 or 20 trees. 
 
@@ -380,6 +380,20 @@ model = RandomForestRegressor (n_estimators = 6, n_jobs=-1, random_state=0)
      Figure 4 Random Forest Regression - Number of Trees Against Mean Squared Error 
 </p>
 
+#### Use hyperparameters: n_estimators, max_depth, bootstrap, n_jobs and random_state to see if I will get a better results 
 
+```python
+
+# let's put the number of trees (n_estimators) = 19 and the range of the max_depth values:
+# 1,3,5,7,9,11,13,15,17 and 19 and see if I will get a better results. 
+
+model = RandomForestRegressor (n_estimators=19, max_depth=1, bootstrap=False, n_jobs=-1,random_state=0)
+
+```
+#### let's put the number of trees (n_estimators) = 19 and the range of the max_depth values:1,3,5,7,9,11,13,15,17 and 19 and see if I will get a better results. 
+
+#### Here, I used many hyperparameters which are n_estimators, max_depth, bootstrap, n_jobs and random_state. Based on a different range of values of max_depth and based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth > 9 where the "train_scores" and "test_scores are > 99%. The deviations shown in the plot may not be very significant as they so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' <= 3 and there is no overfitting. The best performance of the model when the 'max depth' >= 9. 
+
+#### Training anmd Evaluate the model using Random Forest with calculating the train_scores, test_scores, mse_train, mse_test, RMSE_Train and RMSE_Test 
 
   
