@@ -392,9 +392,15 @@ model = RandomForestRegressor (n_estimators=19, max_depth=1, bootstrap=False, n_
 ```
 #### let's put the number of trees (n_estimators) = 19 and the range of the max_depth values:1,3,5,7,9,11,13,15,17 and 19 and see if I will get a better results. 
 
-#### Here, I used many hyperparameters which are n_estimators, max_depth, bootstrap, n_jobs and random_state. Based on a different range of values of max_depth and based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth > 9 where the "train_scores" and "test_scores are > 99%. The deviations shown in the plot may not be very significant as they so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' <= 3 and there is no overfitting. The best performance of the model when the 'max depth' >= 9. 
+#### Here, I used many hyperparameters which are n_estimators, max_depth, bootstrap, n_jobs and random_state. Based on a different range of values of max_depth and based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth > 9 where the "train_scores" and "test_scores are > 99%. The deviations shown in the plot may not be very significant as they so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' <= 3 and there is no overfitting as in Figure 5. The best performance of the model when the 'max depth' >= 9. 
 
 #### Training anmd Evaluate the model using Random Forest with calculating the train_scores, test_scores, mse_train, mse_test, RMSE_Train and RMSE_Test 
 
+<p align="center">
+  <img width="600" height="370" src="https://user-images.githubusercontent.com/61699200/124537972-e2abe780-dde8-11eb-8030-d67cb2f419c3.jpg">
+</p>
 
+<p align="center">
+     Figure 5 Random Forest Regression - Max Depth Against Mean Squared Error 
+</p>
   
