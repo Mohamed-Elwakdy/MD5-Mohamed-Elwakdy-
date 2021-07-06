@@ -185,7 +185,9 @@ train_set,test_set,train_set_RET,test_set_RET = Split_Training_Test_fun (df)
 
 ## XGBoost Algorithm
 
-#### Used the XGBoost Algorithm for training and evaluate the model with different numbers of trees (from 6 to 20 trees) with calculating the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test 
+#### Used the XGBoost Algorithm for training and evaluate the model with different numbers of trees (from 6 to 20 trees) and different values of "max_depth" hyperparameters with calculating the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test. 
+
+#### For more information about the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test values, plaese see the Jupyter Notebook  
 
 <br>
 
@@ -227,8 +229,6 @@ for iter in range(6, 21, 1):
 ```
 
 #### Based on the "train_scores" and "test_scores", the performance of the model is improved when the number of trees are increased so the highest "train_scores" and "test_scores" I got "> 99%" when the number of trees > 9. Although the y-axis is so small, meaning the deviations shown in the plot may not be very significant regarding the underfitting and overfitting as they are so small.  I am looking to find out the best hyperparameters values to get the best performance of the model. Based on Figure 1, what I can start to visually see that there is underfitting when the number of trees <=7, but there is no overfitting.
-
-#### For more information about the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test values, plaese see the Jupyter Notebook  
 
 ```python
 
@@ -298,8 +298,49 @@ plt.show()
      Figure 2 Features importances 
 </p>
 
+<br>
 
+#### Tuning the hyperparameters is going to be important to see if I can get a highest train_scores and test_scores and lowest 'mse_train' and 'mse_test'  
 
-  
-  
+#### Here, I put the number of tree is 100 because the performance of model will be better with big number of trees and put different values of 'max_depth' to see if this will help to get a better results. 
+
+#### Here, I used many hyperparameters which are learning_rate,max_depth, n_estimators and subsample. with a different range of values of max_depth. As in Figure 3 and Based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth> 3 where the "train_scores" and "test_scores are > 97%. As I mentioned above that the deviations shown in the plot may not be very significant as they so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' < 3 and there is no overfitting. The best performance of the model when the 'max depth' >= 3.
+
+```python
+
+mse_train1, mse_test1,max_depth1, RMSE_Train1, RMSE_Test1, train_scores, test_scores = list(), list(), list(), list(),list(), list(),list()
+
+model = XGBRegressor(learning_rate= 0.04,max_depth= 1,n_estimators= 100,subsample= 0.7)
+
+# Training and Evaluate the model 
+
+for iter in range(1, 20, 2):
+    
+    max_depth1.append(iter)
+    
+    model.fit(train_set, train_set_RET)
+    y_train_predicted = model.predict(train_set)
+    train_score =  model.score(train_set, train_set_RET)
+    train_scores.append(train_score)
+    
+    y_test_predicted = model.predict(test_set)
+    test_score =  model.score(test_set, test_set_RET)
+    test_scores.append(test_score)    
+
+    mse_train = mean_squared_error(train_set_RET, y_train_predicted)
+    mse_train1.append(mse_train)
+    RMSE_Train = np.sqrt(mse_train)
+    RMSE_Train1.append (RMSE_Train)
+
+    mse_test = mean_squared_error(test_set_RET, y_test_predicted)
+    mse_test1.append(mse_test)
+    RMSE_Test = np.sqrt(mse_test)
+    RMSE_Test1.append (RMSE_Test)
+    #print('>%d, train: %.3f, test: %.3f' % (i, train_score, test_score))
+    #print("Iteration: {} Train mse: {} Test mse: {}".format(iter, mse_train, mse_test))
+    model.max_depth += 2
+ 
+ ```
+ 
+ <br> 
   
