@@ -250,7 +250,7 @@ plot_fun(num_trees,mse_train1, mse_test1)
 <br>
 
 <p align="center">
-  <img width="650" height="370" src="https://user-images.githubusercontent.com/61699200/124529921-88575a80-ddd9-11eb-8605-6820fba32082.jpg">
+  <img width="610" height="370" src="https://user-images.githubusercontent.com/61699200/124529921-88575a80-ddd9-11eb-8605-6820fba32082.jpg">
 </p>
 
 
