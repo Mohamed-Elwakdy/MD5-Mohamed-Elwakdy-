@@ -256,7 +256,7 @@ plot_fun(num_trees,mse_train1, mse_test1)
 </p>
 
 <p align="center">
-     Figure 1 XGBOoost Algorithm - Number of Trees Against Mean Squared Error (n_estimators has values from 6 to 20)
+     Figure 1 XGBOoost Regression - Number of Trees Against Mean Squared Error (n_estimators has values from 6 to 20)
 </p>
 
 <br>
@@ -346,7 +346,7 @@ for iter in range(1, 20, 2):
 </p>
 
 <p align="center">
-     Figure 3 XGBOoost Algorithm - Max Depth Against Mean Squared Error 
+     Figure 3 XGBOoost Regression - Max Depth Against Mean Squared Error 
 </p>
 
 <br> 
@@ -372,6 +372,13 @@ model = RandomForestRegressor (n_estimators = 6, n_jobs=-1, random_state=0)
 
 #### Here, I used many hyperparameters which are n_estimators, n_jobs and random_state. Based on the "train_scores" and "test_scores", the performance of the model is good where the accuracy is more than 99%. The deviations shown in the plot may not be very significant as they are so small (1e-6), but based on what I can start to visually see that there is underfitting When the number of trees are < 9 and there is overfitting when the number of trees are between 12 and 18 as in Figure 4. The best performance of the model is when the number of trees are 10, 11, 19 or 20 trees. 
 
+<p align="center">
+  <img width="600" height="370" src="https://user-images.githubusercontent.com/61699200/124536675-5bf60b00-dde6-11eb-9c06-febaefebaa21.jpg">
+</p>
+
+<p align="center">
+     Figure 4 Random Forest Regression - Number of Trees Against Mean Squared Error 
+</p>
 
 
 
