@@ -259,8 +259,33 @@ plot_fun(num_trees,mse_train1, mse_test1)
      Figure 1 XGBOoost Algorithm - Mean Squared Error Against Number of Trees (n_estimators has values from 6 to 20)
 </p>
 
+<br>
+
+#### Finding the importantance variables
+
+<br>
 
 
+```python
+
+# Get feature importance in xgboost and sort it with descending.
+
+sorted_idx = np.argsort(model.feature_importances_)[::-1]
+
+# print all sorted importances and the name of columns together as lists
+
+for index in sorted_idx:
+    print([df.columns[index], model.feature_importances_[index]])
+
+# Plot the importances with XGboost built-in function
+
+# Although the 'Day' independent variable has small score, it is the third feature in 
+# the importance and has an effect on the performance of the model 
+
+plot_importance(model) # Plot importance based on fitted trees.
+plt.show()
+
+```
 
 
 
