@@ -9,11 +9,11 @@
 
 <br>
 
-#### This dataset pull from The Wharton School, University of Pennsylvania. 
+#### This dataset pulled from The Wharton School, University of Pennsylvania.
 
-#### I used Python 3 to work on this Assesment. I built two predictive models using XGBoost and Random Forest. XGBoost and Random forest are the best two machine learning algorithms that I used for building predictive models. XGboost can handle the missing values and Random Forest can be used to get a low variance in addion to this algorithm is used to find out the most important independent variables and can be used with subsampling techniques to deal with a big data.   
+#### I used Python 3 to work on this Assessment. I built two predictive models using XGBoost and Random Forest. XGBoost and Random forest are the best two machine learning algorithms that I used for building predictive models. XGboost can handle the missing values. In general, Random Forest can be used to get a low variance in addition to this algorithm is used to find out the most important independent variables. In addition, it  can be used with subsampling techniques to deal with big data.  
 
-#### The best perfomance of both models I get using those two predictive models when I increased the number of trees 'n_estimators' and 'max_depth' hyperparameters where I got the highest train_scores and test_scores and lowest mse_train and mse_test.  
+#### The best performance of both models that I got when I increased the number of trees 'n_estimators' and 'max_depth' hyperparameters. This helps me to get the highest train_scores and test_scores and lowest mse_train and mse_test.  
  
 <br>
 
@@ -57,7 +57,7 @@ df = pd.read_csv('Dataset_Januray_2005.csv',na_values = ' ')
 
 <br>
 
-|    Field Name        |        Description                |
+|    Field Name        |        Description         |
 |:-: | ------------------ |
 |PERMNO | Unique stock (share class) level identifier|
 |Date | Weekly basis |
@@ -109,7 +109,8 @@ df = df.drop(['DATE'], axis = 1)
 ```
 <br>
 
-#### Apply normalization techniques to treate the negative values with changing the location for the 'RET' independent vaiable to be the last column in the dataframe 
+#### Apply normalization techniques to treat the negative values with changing the location for the 'RET' independent variable to be the last column in the dataframe
+
 ```python
 for column in df.columns:
     df[column] = (df[column] - df[column].min()) / (df[column].max() - df[column].min())
@@ -185,9 +186,9 @@ train_set,test_set,train_set_RET,test_set_RET = Split_Training_Test_fun (df)
 
 ## XGBoost Regression
 
-#### Used the XGBoost Algorithm for training and evaluate the model with different numbers of trees (from 6 to 20 trees) and different values of "max_depth" hyperparameters with calculating the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test. 
+#### Used the XGBoost Algorithm for training and evaluate the model with different numbers of trees (from 6 to 20 trees) and different values of "max_depth" hyperparameters with calculating the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test.
 
-#### For more information about the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test values, plaese see the Jupyter Notebook  
+#### For more information about the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test values, please see the Jupyter Notebook  
 
 <br>
 
@@ -228,7 +229,7 @@ for iter in range(6, 21, 1):
     
 ```
 
-#### Based on the "train_scores" and "test_scores", the performance of the model is improved when the number of trees are increased so the highest "train_scores" and "test_scores" I got "> 99%" when the number of trees > 9. Although the y-axis is so small, meaning the deviations shown in the plot may not be very significant regarding the underfitting and overfitting as they are so small.  I am looking to find out the best hyperparameters values to get the best performance of the model. Based on Figure 1, what I can start to visually see that there is underfitting when the number of trees <=7, but there is no overfitting.
+#### Based on the "train_scores" and "test_scores", the performance of the model is improved when the number of trees are increased so the highest "train_scores" and "test_scores" I got "> 99%" when the number of trees > 9. Although the y-axis is so small, the deviations shown in the plot may not be very significant regarding the underfitting and overfitting as they are so small.  I am looking to find out the best hyperparameters values to get the best performance of the model. Based on Figure 1, I can start to visually see that there is underfitting when the number of trees <=7, but there is no overfitting.
 
 ```python
 
@@ -302,9 +303,9 @@ plt.show()
 
 #### Tuning the hyperparameters is going to be important to see if I can get a highest train_scores and test_scores and lowest 'mse_train' and 'mse_test'  
 
-#### Here, I put the number of tree is 100 because the performance of model will be better with big number of trees and put different values of 'max_depth' to see if this will help to get a better results. 
+#### Here, I put the number of trees 100 because the performance of the model will be better with a big number of trees and put different values of 'max_depth' to see if this will help to get better results.
 
-#### Here, I used many hyperparameters which are learning_rate,max_depth, n_estimators and subsample with a different range of 'max_depth' values. As in Figure 3 and Based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth> 3 where the "train_scores" and "test_scores are > 97%. As I mentioned above that the deviations shown in the plot may not be very significant as they so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' < 3 and there is no overfitting. The best performance of the model when the 'max depth' >= 3.
+#### Here, I used many hyperparameters which are learning_rate,max_depth, n_estimators and subsample with a different range of 'max_depth' values. As in Figure 3 and Based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth> 3 where the "train_scores" and "test_scores are > 97%. As I mentioned above, the deviations shown in the plot may not be very significant as they are so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' < 3 and there is no overfitting. The best performance of the model when the 'max depth' >= 3.
 
 ```python
 
@@ -353,16 +354,16 @@ for iter in range(1, 20, 2):
 
 <br>
 
-#### Here, I will start to use a random forest instead of XGBoost to see if I will get a better results. Before using Random Forest, I will Remove all observations contain missing values
+#### Here, I will start to use a random forest instead of XGBoost to see if I will get better results. Before using Random Forest, I will Remove all observations contain missing values
 
-#### For more information about the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test values, plaese see the Jupyter Notebook 
+#### For more information about the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test values, please see the Jupyter Notebook 
 
 ```python
 df_data = df.dropna()
 print(df_data)
 ```
 
-### Split the dataset into training test sets 
+### Split the dataset into training and test datasets 
 
 train_set_RF,test_set_RF,train_set_pred,test_set_pred = Split_Training_Test_fun (df_data)
 
@@ -390,11 +391,11 @@ model = RandomForestRegressor (n_estimators = 6, n_jobs=-1, random_state=0)
 model = RandomForestRegressor (n_estimators=19, max_depth=1, bootstrap=False, n_jobs=-1,random_state=0)
 
 ```
-#### let's put the number of trees (n_estimators) = 19 and the range of the max_depth values:1,3,5,7,9,11,13,15,17 and 19 and see if I will get a better results. 
+#### let's put the number of trees (n_estimators) = 19 and the range of the max_depth values:1,3,5,7,9,11,13,15,17 and 19 and see if I will get better results.
 
-#### Here, I used many hyperparameters which are n_estimators, max_depth, bootstrap, n_jobs and random_state. Based on a different range of values of max_depth and based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth > 9 where the "train_scores" and "test_scores are > 99%. The deviations shown in the plot may not be very significant as they so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' <= 3 and there is no overfitting as in Figure 5. The best performance of the model when the 'max depth' >= 9. 
+#### Here, I used many hyperparameters which are n_estimators, max_depth, bootstrap, n_jobs and random_state. Based on a different range of values of max_depth and based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth > 9 where the "train_scores" and "test_scores are > 99%. The deviations shown in the plot may not be very significant as they are so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' <= 3 and there is no overfitting as in Figure 5. The best performance of the model when the 'max depth' >= 9.
 
-#### Training anmd Evaluate the model using Random Forest with calculating the train_scores, test_scores, mse_train, mse_test, RMSE_Train and RMSE_Test 
+#### Training and Evaluate the model using Random Forest with calculating the train_scores, test_scores, mse_train, mse_test, RMSE_Train and RMSE_Test 
 
 <p align="center">
   <img width="600" height="370" src="https://user-images.githubusercontent.com/61699200/124537972-e2abe780-dde8-11eb-8030-d67cb2f419c3.jpg">
