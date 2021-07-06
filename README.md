@@ -295,7 +295,7 @@ plt.show()
 </p>
 
 <p align="center">
-     Figure 2 Features importances with XGboost built-in function
+     Figure 2 Features importances 
 </p>
 
 
