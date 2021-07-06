@@ -277,7 +277,7 @@ sorted_idx = np.argsort(model.feature_importances_)[::-1]
 for index in sorted_idx:
     print([df.columns[index], model.feature_importances_[index]])
 
-# Plot the importances with XGboost built-in function
+# Plot the importances with XGboost built-in function as in Figure 2
 
 # Although the 'Day' independent variable has small score, it is the third feature in 
 # the importance and has an effect on the performance of the model 
@@ -292,6 +292,10 @@ plt.show()
 
 <p align="center">
   <img width="600" height="370" src="https://user-images.githubusercontent.com/61699200/124533156-d2dbd580-dddf-11eb-8a06-860d6f7bc208.jpg">
+</p>
+
+<p align="center">
+     Figure 2 Features importances with XGboost built-in function
 </p>
 
 
