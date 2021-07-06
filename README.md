@@ -287,7 +287,7 @@ plt.show()
 
 ```
 <p align="center">
-  <img width="400" height="250" src="https://user-images.githubusercontent.com/61699200/124533106-be97d880-dddf-11eb-8201-0b6c1999b157.jpg">
+  <img width="350" height="200" src="https://user-images.githubusercontent.com/61699200/124533106-be97d880-dddf-11eb-8201-0b6c1999b157.jpg">
 </p>
 
 <p align="center">
