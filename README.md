@@ -183,7 +183,7 @@ train_set,test_set,train_set_RET,test_set_RET = Split_Training_Test_fun (df)
 ```
 <br>
 
-## XGBoost Algorithm
+## XGBoost Regression
 
 #### Used the XGBoost Algorithm for training and evaluate the model with different numbers of trees (from 6 to 20 trees) and different values of "max_depth" hyperparameters with calculating the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test. 
 
@@ -350,4 +350,29 @@ for iter in range(1, 20, 2):
 </p>
 
 <br> 
+
+## Random Forest Regression
+
+<br>
+
+#### Here, I will start to use a random forest instead of XGBoost to see if I will get a better results. Before using Random Forest, I will Remove all observations contain missing values
+
+```python
+df_data = df.dropna()
+print(df_data)
+```
+
+### Split the dataset into training test sets 
+
+train_set_RF,test_set_RF,train_set_pred,test_set_pred = Split_Training_Test_fun (df_data)
+
+model = RandomForestRegressor (n_estimators = 6, n_jobs=-1, random_state=0)
+
+#### Training and Evaluate the model using Random Forest with calculating the train_scores, test_scores, 'mse_train' and 'mse_test'
+
+#### Here, I used many hyperparameters which are n_estimators, n_jobs and random_state. Based on the "train_scores" and "test_scores", the performance of the model is good where the accuracy is more than 99%. The deviations shown in the plot may not be very significant as they are so small (1e-6), but based on what I can start to visually see that there is underfitting When the number of trees are < 9 and there is overfitting when the number of trees are between 12 and 18 as in Figure 4. The best performance of the model is when the number of trees are 10, 11, 19 or 20 trees. 
+
+
+
+
   
