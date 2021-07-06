@@ -256,7 +256,7 @@ plot_fun(num_trees,mse_train1, mse_test1)
 </p>
 
 <p align="center">
-     Figure 1 XGBOoost Algorithm - Mean Squared Error Against Number of Trees (n_estimators has values from 6 to 20)
+     Figure 1 XGBOoost Algorithm - Number of Trees Against Mean Squared Error (n_estimators has values from 6 to 20)
 </p>
 
 <br>
@@ -304,7 +304,7 @@ plt.show()
 
 #### Here, I put the number of tree is 100 because the performance of model will be better with big number of trees and put different values of 'max_depth' to see if this will help to get a better results. 
 
-#### Here, I used many hyperparameters which are learning_rate,max_depth, n_estimators and subsample. with a different range of values of max_depth. As in Figure 3 and Based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth> 3 where the "train_scores" and "test_scores are > 97%. As I mentioned above that the deviations shown in the plot may not be very significant as they so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' < 3 and there is no overfitting. The best performance of the model when the 'max depth' >= 3.
+#### Here, I used many hyperparameters which are learning_rate,max_depth, n_estimators and subsample with a different range of 'max_depth' values. As in Figure 3 and Based on the "train_scores" and "test_scores", the performance of the model is improved when max_depth> 3 where the "train_scores" and "test_scores are > 97%. As I mentioned above that the deviations shown in the plot may not be very significant as they so small, but based on what I can start to visually see that there is underfitting when the 'max_depth' < 3 and there is no overfitting. The best performance of the model when the 'max depth' >= 3.
 
 ```python
 
@@ -344,7 +344,10 @@ for iter in range(1, 20, 2):
 <p align="center">
   <img width="600" height="370" src="https://user-images.githubusercontent.com/61699200/124534609-9a89c680-dde2-11eb-8993-04b81c3f8a6b.jpg">
 </p>
- 
+
+<p align="center">
+     Figure 3 XGBOoost Algorithm - Max Depth Against Mean Squared Error 
+</p>
 
 <br> 
   
