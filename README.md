@@ -286,10 +286,13 @@ plot_importance(model) # Plot importance based on fitted trees.
 plt.show()
 
 ```
+<p align="center">
+  <img width="600" height="370" src="https://user-images.githubusercontent.com/61699200/124533106-be97d880-dddf-11eb-8201-0b6c1999b157.jpg">
+</p>
 
-
-![Importance variables](https://user-images.githubusercontent.com/61699200/124533106-be97d880-dddf-11eb-8201-0b6c1999b157.jpg)
-
+<p align="center">
+  <img width="600" height="370" src="https://user-images.githubusercontent.com/61699200/124533156-d2dbd580-dddf-11eb-8a06-860d6f7bc208.jpg">
+</p>
 
 
 
