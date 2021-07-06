@@ -341,6 +341,10 @@ for iter in range(1, 20, 2):
     model.max_depth += 2
  
  ```
+<p align="center">
+  <img width="600" height="370" src="https://user-images.githubusercontent.com/61699200/124534609-9a89c680-dde2-11eb-8993-04b81c3f8a6b.jpg">
+</p>
  
- <br> 
+
+<br> 
   
