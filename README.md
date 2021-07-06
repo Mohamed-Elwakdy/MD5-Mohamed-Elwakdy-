@@ -187,6 +187,8 @@ train_set,test_set,train_set_RET,test_set_RET = Split_Training_Test_fun (df)
 
 #### Used the XGBoost Algorithm for training and evaluate the model with different numbers of trees (from 6 to 20 trees) with calculating the mse_train, mse_test, mse_train, mse_test, RMSE_Train and RMSE_Test 
 
+<br>
+
 ```python
 
 model = XGBRegressor(n_estimators = 6)
